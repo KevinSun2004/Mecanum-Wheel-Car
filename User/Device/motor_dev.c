@@ -34,9 +34,17 @@ void motor_init(void)
     HAL_TIM_Base_Start_IT(&Program_TIM);
 }
 
+/**
+ * @brief Get the motor speed
+ * 
+ * @param htim 
+ * @param speed 
+ * @return int32_t 
+ */
+int32_t encoder_count = 0;
 int32_t get_motor_speed(TIM_HandleTypeDef *htim, float *speed)
 {
-	TimerEncoder=(short)(__HAL_TIM_GET_COUNTER(htim));
-	__HAL_TIM_SET_COUNTER(&htim,0);
-	return TimerEncoder;
+    encoder_count = (short)(__HAL_TIM_GET_COUNTER(htim));
+	__HAL_TIM_SET_COUNTER(htim,0);
+	return encoder_count / 132;
 }

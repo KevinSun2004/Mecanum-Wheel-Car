@@ -29,8 +29,6 @@ void chassis_init()
     pid_data_reset(&chassis_info.pid_info[2]);
     pid_data_reset(&chassis_info.pid_info[3]);
 
-    pid_set_value();
-
     motor_init();
 }
 
