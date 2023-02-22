@@ -14,13 +14,8 @@
 /***Functions***/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    switch (htim)
+    if(htim == &Program_TIM)
     {
-        case &Program_TIM:
-            /* code */
-            break;
 
-        default:
-            break;
     }
 }

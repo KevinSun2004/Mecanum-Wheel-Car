@@ -24,6 +24,6 @@
 void frame_init(void)
 {
     remote_init();
+    chassis_init();
     steering_engine_init();
-    motor_init();
 }

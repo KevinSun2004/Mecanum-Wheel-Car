@@ -79,7 +79,7 @@
  * @brief Define Read Encoder IT CLK
  *
  */
-#define ReadEncoder_TIM htim6
+#define Program_TIM htim6
 
 /**
  * @brief Define Bluetooth Tx && Rx Port && Pin

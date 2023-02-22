@@ -15,7 +15,6 @@
 #include "tim.h"
 
 /***Variables***/
-int32_t motor_speed[4];
 
 /***Functions***/
 

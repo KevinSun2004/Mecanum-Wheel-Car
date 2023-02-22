@@ -153,6 +153,18 @@
         ]
       },
       {
+        "name": "Tasks",
+        "files": [
+          {
+            "path": "User/Tasks/arm_task.c"
+          },
+          {
+            "path": "User/Tasks/chassis_task.c"
+          }
+        ],
+        "folders": []
+      },
+      {
         "name": "Utility",
         "files": [
           {
