@@ -34,6 +34,11 @@ void chassis_init()
     motor_init();
 }
 
+void update_speed()
+{
+    
+}
+
 /**
  * @brief Chassis Timer Callback
  * 
