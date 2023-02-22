@@ -25,5 +25,11 @@ schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+schoolrmv2\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+schoolrmv2\main.o: ../Core/Inc/dma.h
+schoolrmv2\main.o: ../Core/Inc/tim.h
+schoolrmv2\main.o: ../Core/Inc/usart.h
 schoolrmv2\main.o: ../Core/Inc/gpio.h
-schoolrmv2\main.o: ..\User\Config\init_config.h
+schoolrmv2\main.o: ../User/Config/init_config.h

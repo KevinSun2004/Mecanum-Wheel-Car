@@ -12,6 +12,7 @@
 /***Includes***/
 #include "motor_dev.h"
 #include "init_config.h"
+#include "tim.h"
 
 /***Functions***/
 
@@ -22,12 +23,11 @@
 void motor_init(void)
 {
     //Start PWM Output
-    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
-    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
-    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_4);
+    HAL_TIM_PWM_Start(&Motor1_PWM_TIM, Motor1_PWM_CH);
+    HAL_TIM_PWM_Start(&Motor2_PWM_TIM, Motor2_PWM_CH);
+    HAL_TIM_PWM_Start(&Motor3_PWM_TIM, Motor3_PWM_CH);
+    HAL_TIM_PWM_Start(&Motor4_PWM_TIM, Motor4_PWM_CH);
+ 
+    //Start Read Encoder IT
+    HAL_TIM_Base_Start_IT(&ReadEncoder_TIM);
 }

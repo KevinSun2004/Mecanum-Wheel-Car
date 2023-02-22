@@ -8,3 +8,6 @@
  * @copyright Copyright (c) 2023
  * 
  */
+
+/***Functions***/
+void motor_init(void);

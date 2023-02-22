@@ -24,3 +24,6 @@ schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal
 schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+schoolrmv2\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h

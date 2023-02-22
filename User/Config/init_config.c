@@ -13,6 +13,7 @@
 #include "init_config.h"
 #include "remote_dev.h"
 #include "motor_dev.h"
+#include "steering_engine_dev.h"
 
 /***Functions***/
 
@@ -23,5 +24,6 @@
 void frame_init(void)
 {
     remote_init();
+    steering_engine_init();
     motor_init();
 }

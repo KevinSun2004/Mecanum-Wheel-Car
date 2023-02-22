@@ -13,6 +13,7 @@
 #include "remote_dev.h"
 #include "init_config.h"
 #include "usart.h"
+#include "dma.h"
 #include "stdbool.h"
 
 /***Variables***/
