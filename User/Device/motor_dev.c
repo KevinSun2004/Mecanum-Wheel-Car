@@ -14,6 +14,9 @@
 #include "init_config.h"
 #include "tim.h"
 
+/***Variables***/
+int32_t motor_speed[4];
+
 /***Functions***/
 
 /**
@@ -29,5 +32,5 @@ void motor_init(void)
     HAL_TIM_PWM_Start(&Motor4_PWM_TIM, Motor4_PWM_CH);
  
     //Start Read Encoder IT
-    HAL_TIM_Base_Start_IT(&ReadEncoder_TIM);
+    HAL_TIM_Base_Start_IT(&Program_TIM);
 }

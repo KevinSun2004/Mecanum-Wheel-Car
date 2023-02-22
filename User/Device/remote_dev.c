@@ -14,26 +14,9 @@
 #include "init_config.h"
 #include "usart.h"
 #include "dma.h"
-#include "stdbool.h"
 
 /***Variables***/
-
-/**
- * @brief Buffer
- *
- */
-uint8_t rx_buff[MAX_BUF];
-
-/**
- * @brief Rc_info
- *
- */
-bool rotate_l        = 0;
-bool rotate_r        = 0;
-int control_x        = 0;
-int control_y        = 0;
-uint8_t arm_position = 0x00;
-uint8_t count        = 0;
+Remote_Typedef remote_info;
 
 /***Functions***/
 
@@ -43,8 +26,15 @@ uint8_t count        = 0;
  */
 void remote_init(void)
 {
+    remote_info.arm_position = 0;
+    remote_info.control_x    = 0;
+    remote_info.control_y    = 0;
+    remote_info.count        = 0;
+    remote_info.rotate_l     = 0;
+    remote_info.rotate_r     = 0;
+
     // Init UART_DMA
-    HAL_UARTEx_ReceiveToIdle_DMA(&Bluetooth_UART, (uint8_t *)rx_buff, MAX_BUF);
+    HAL_UARTEx_ReceiveToIdle_DMA(&Bluetooth_UART, (uint8_t *)remote_info.rx_buff, MAX_BUF);
 }
 
 /**
@@ -55,11 +45,10 @@ void remote_init(void)
  */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    if (rx_buff[0] == 0xA5 && rx_buff[data_length - 1] == 0x5A)
-    {
-        rc_handler(rx_buff);
+    if (remote_info.rx_buff[0] == 0xA5 && remote_info.rx_buff[data_length - 1] == 0x5A) {
+        rc_handler(remote_info.rx_buff);
     }
-    HAL_UARTEx_ReceiveToIdle_DMA(&Bluetooth_UART, (uint8_t *)rx_buff, MAX_BUF);
+    HAL_UARTEx_ReceiveToIdle_DMA(&Bluetooth_UART, (uint8_t *)remote_info.rx_buff, MAX_BUF);
 }
 
 /**
@@ -69,11 +58,11 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
  */
 void rc_handler(uint8_t data[])
 {
-    control_x = data[1];
-    control_y = data[2];
-    if (control_x > 127) control_x -= 256;
-    if (control_y > 127) control_y -= 256;
-    arm_position = data[3];
-    rotate_l     = data[4];
-    rotate_r     = data[5];
+    remote_info.control_x = data[1];
+    remote_info.control_y = data[2];
+    if (remote_info.control_x > 127) remote_info.control_x -= 256;
+    if (remote_info.control_y > 127) remote_info.control_y -= 256;
+    remote_info.arm_position = data[3];
+    remote_info.rotate_l     = data[4];
+    remote_info.rotate_r     = data[5];
 }

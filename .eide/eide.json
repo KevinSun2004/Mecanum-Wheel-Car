@@ -66,6 +66,9 @@
         "name": "Config",
         "files": [
           {
+            "path": "User/Config/callback_config.c"
+          },
+          {
             "path": "User/Config/init_config.c"
           }
         ],
@@ -153,7 +156,7 @@
         "name": "Utility",
         "files": [
           {
-            "path": "User/Utility/can_util.c"
+            "path": "User/Utility/pid_util.c"
           }
         ],
         "folders": []
