@@ -10,12 +10,13 @@
  */
 #include "callback_config.h"
 #include "init_config.h"
+#include "chassis_task.h"
 
 /***Functions***/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim == &Program_TIM)
     {
-
+        chassis_tim_callback();
     }
 }

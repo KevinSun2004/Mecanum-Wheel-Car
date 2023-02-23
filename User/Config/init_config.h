@@ -16,40 +16,44 @@
  *
  */
 #define Motor1_m1_Port GPIOB
-#define Motor1_m1_Pin  GPIO_PIN_0
+#define Motor1_m1_Pin  GPIO_PIN_1
 #define Motor1_m2_Port GPIOB
-#define Motor1_m2_Pin  GPIO_PIN_1
+#define Motor1_m2_Pin  GPIO_PIN_2
 #define Motor1_PWM_TIM htim1
 #define Motor1_PWM_CH  TIM_CHANNEL_1
 #define Motor1_Encoder htim3
 // Encoder: PA6 && PA7
+// TIM:     PE9
 
-#define Motor2_m1_Port GPIOB
-#define Motor2_m1_Pin  GPIO_PIN_2
-#define Motor2_m2_Port GPIOB
-#define Motor2_m2_Pin  GPIO_PIN_3
+#define Motor2_m1_Port GPIOF
+#define Motor2_m1_Pin  GPIO_PIN_11
+#define Motor2_m2_Port GPIOF
+#define Motor2_m2_Pin  GPIO_PIN_12
 #define Motor2_PWM_TIM htim1
 #define Motor2_PWM_CH  TIM_CHANNEL_2
 #define Motor2_Encoder htim4
 // Encoder: PD12 && PD13
+// TIM:     PE11
 
-#define Motor3_m1_Port GPIOB
-#define Motor3_m1_Pin  GPIO_PIN_4
-#define Motor3_m2_Port GPIOB
-#define Motor3_m2_Pin  GPIO_PIN_5
+#define Motor3_m1_Port GPIOF
+#define Motor3_m1_Pin  GPIO_PIN_13
+#define Motor3_m2_Port GPIOF
+#define Motor3_m2_Pin  GPIO_PIN_14
 #define Motor3_PWM_TIM htim1
 #define Motor3_PWM_CH  TIM_CHANNEL_3
 #define Motor3_Encoder htim5
 // Encoder: PA0 && PA1
+// TIM:     PE13
 
-#define Motor4_m1_Port GPIOB
-#define Motor4_m1_Pin  GPIO_PIN_6
-#define Motor4_m2_Port GPIOB
-#define Motor4_m2_Pin  GPIO_PIN_7
+#define Motor4_m1_Port GPIOF
+#define Motor4_m1_Pin  GPIO_PIN_15
+#define Motor4_m2_Port GPIOG
+#define Motor4_m2_Pin  GPIO_PIN_0
 #define Motor4_PWM_TIM htim1
 #define Motor4_PWM_CH  TIM_CHANNEL_4
 #define Motor4_Encoder htim8
 // Encoder: PC6 && PC7
+// TIM:     PE14
 
 /**
  * @brief Define Steering Engine Port && Pin && CLK && CH

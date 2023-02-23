@@ -35,3 +35,4 @@ void pid_data_reset(PID_Typedef *pid_info);
 void pid_set_value(PID_Typedef *pid_info, float kp, float ki, float kd, float output_max, float sum_max);
 void pid_set_ref(PID_Typedef *pid_info, float ref);
 void pid_set_fdb(PID_Typedef *pid_info, float fdb);
+void pid_calc(PID_Typedef *pid_info);

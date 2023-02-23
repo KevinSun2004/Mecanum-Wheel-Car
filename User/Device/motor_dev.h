@@ -15,3 +15,4 @@
 /***Functions***/
 void motor_init(void);
 void get_motor_speed(TIM_HandleTypeDef *htim, float *speed);
+void motor_ctrl(float v1, float v2, float v3, float v4);

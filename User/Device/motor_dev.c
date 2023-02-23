@@ -13,6 +13,7 @@
 #include "motor_dev.h"
 #include "init_config.h"
 #include "tim.h"
+#include "math.h"
 
 /***Variables***/
 
@@ -47,4 +48,28 @@ void get_motor_speed(TIM_HandleTypeDef *htim, float *speed)
     encoder_count = (short)(__HAL_TIM_GET_COUNTER(htim));
 	__HAL_TIM_SET_COUNTER(htim,0);
     *speed = encoder_count / 132;
+}
+
+/**
+ * @brief Motor Output Control
+ * 
+ * @param speed 
+ */
+void motor_ctrl(float v1, float v2, float v3, float v4)
+{
+    if(v1 >= 0) {HAL_GPIO_WritePin(Motor1_m1_Port, Motor1_m1_Pin, GPIO_PIN_RESET); HAL_GPIO_WritePin(Motor1_m2_Port, Motor1_m2_Pin, GPIO_PIN_SET);}
+    else {HAL_GPIO_WritePin(Motor1_m1_Port, Motor1_m1_Pin, GPIO_PIN_SET); HAL_GPIO_WritePin(Motor1_m2_Port, Motor1_m2_Pin, GPIO_PIN_RESET);}
+    __HAL_TIM_SetCompare(&Motor1_PWM_TIM, Motor1_PWM_CH, 200 * fabs(v1));
+
+    if(v2 >= 0) {HAL_GPIO_WritePin(Motor2_m1_Port, Motor2_m1_Pin, GPIO_PIN_RESET); HAL_GPIO_WritePin(Motor2_m2_Port, Motor2_m2_Pin, GPIO_PIN_SET);}
+    else {HAL_GPIO_WritePin(Motor2_m1_Port, Motor2_m1_Pin, GPIO_PIN_SET); HAL_GPIO_WritePin(Motor2_m2_Port, Motor2_m2_Pin, GPIO_PIN_RESET);}
+    __HAL_TIM_SetCompare(&Motor2_PWM_TIM, Motor2_PWM_CH, 200 * fabs(v2));
+
+    if(v3 >= 0) {HAL_GPIO_WritePin(Motor3_m1_Port, Motor3_m1_Pin, GPIO_PIN_RESET); HAL_GPIO_WritePin(Motor3_m2_Port, Motor3_m2_Pin, GPIO_PIN_SET);}
+    else {HAL_GPIO_WritePin(Motor3_m1_Port, Motor3_m1_Pin, GPIO_PIN_SET); HAL_GPIO_WritePin(Motor3_m2_Port, Motor3_m2_Pin, GPIO_PIN_RESET);}
+    __HAL_TIM_SetCompare(&Motor3_PWM_TIM, Motor3_PWM_CH, 200 * fabs(v3));
+
+    if(v4 >= 0) {HAL_GPIO_WritePin(Motor4_m1_Port, Motor4_m1_Pin, GPIO_PIN_RESET); HAL_GPIO_WritePin(Motor4_m2_Port, Motor4_m2_Pin, GPIO_PIN_SET);}
+    else {HAL_GPIO_WritePin(Motor4_m1_Port, Motor4_m1_Pin, GPIO_PIN_SET); HAL_GPIO_WritePin(Motor4_m2_Port, Motor4_m2_Pin, GPIO_PIN_RESET);}
+    __HAL_TIM_SetCompare(&Motor4_PWM_TIM, Motor4_PWM_CH, 200 * fabs(v4));
 }

@@ -71,6 +71,9 @@ void pid_control()
     pid_calc(&chassis_info.pid_info[1]);
     pid_calc(&chassis_info.pid_info[2]);
     pid_calc(&chassis_info.pid_info[3]);
+
+    motor_ctrl(chassis_info.pid_info[0].output, chassis_info.pid_info[1].output,
+               chassis_info.pid_info[2].output, chassis_info.pid_info[3].output);
 }
 
 /**
@@ -96,4 +99,5 @@ void chassis_tim_callback()
 {
     update_speed();
     pid_control();
+    //motor_ctrl(50, 50, 50, 50);
 }
