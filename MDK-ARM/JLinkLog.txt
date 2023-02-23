@@ -1,0 +1,144 @@
+T71A8 000:196.360   SEGGER J-Link V7.86a Log File
+T71A8 000:196.462   DLL Compiled: Feb 22 2023 16:26:41
+T71A8 000:196.473   Logging started @ 2023-02-23 05:17
+T71A8 000:196.482 - 196.488ms
+T71A8 000:196.499 JLINK_SetWarnOutHandler(...)
+T71A8 000:196.512 - 0.017ms
+T71A8 000:196.522 JLINK_OpenEx(...)
+T71A8 000:198.612   Firmware: J-Link V9 compiled May  7 2021 16:26:12
+T71A8 000:199.055   Firmware: J-Link V9 compiled May  7 2021 16:26:12
+T71A8 000:199.266   Decompressing FW timestamp took 139 us
+T71A8 000:207.601   Hardware: V9.40
+T71A8 000:207.823   S/N: 69409808
+T71A8 000:207.841   OEM: SEGGER
+T71A8 000:207.858   Feature(s): RDI, GDB, FlashDL, FlashBP, JFlash
+T71A8 000:209.456   TELNET listener socket opened on port 19021
+T71A8 000:210.978   WEBSRV WEBSRV_Init(): Starting webserver thread(s)
+T71A8 000:211.115   WEBSRV Webserver running on local port 19080
+T71A8 000:224.840 - 28.336ms returns "O.K."
+T71A8 000:224.896 JLINK_GetEmuCaps()
+T71A8 000:224.901 - 0.007ms returns 0xB9FF7BBF
+T71A8 000:224.915 JLINK_TIF_GetAvailable(...)
+T71A8 000:225.149 - 0.245ms
+T71A8 000:225.165 JLINK_SetErrorOutHandler(...)
+T71A8 000:225.170 - 0.006ms
+T71A8 000:225.201 JLINK_ExecCommand("ProjectFile = "C:\Users\drinkcat\SynologyDrive\Code\STM32\Project\SchoolRMV2\MDK-ARM\JLinkSettings.ini"", ...). 
+T71A8 000:239.881   Ref file found at: C:\Keil_v5\ARM\Segger\JLinkDevices.ref
+T71A8 000:239.971   REF file references invalid XML file: C:\Program Files\SEGGER\JLink\JLinkDevices.xml
+T71A8 000:266.110 - 40.917ms returns 0x00
+T71A8 000:266.164 JLINK_ExecCommand("Device = STM32F103ZE", ...). 
+T71A8 000:266.545   Device "STM32F103ZE" selected.
+T71A8 000:266.739 - 0.572ms returns 0x00
+T71A8 000:266.750 JLINK_ExecCommand("DisableConnectionTimeout", ...). 
+T71A8 000:266.758 - 0.003ms returns 0x01
+T71A8 000:266.764 JLINK_GetHardwareVersion()
+T71A8 000:266.769 - 0.006ms returns 94000
+T71A8 000:266.779 JLINK_GetDLLVersion()
+T71A8 000:266.784 - 0.006ms returns 78601
+T71A8 000:266.789 JLINK_GetOEMString(...)
+T71A8 000:266.795 JLINK_GetFirmwareString(...)
+T71A8 000:266.799 - 0.006ms
+T71A8 000:266.807 JLINK_GetDLLVersion()
+T71A8 000:266.811 - 0.006ms returns 78601
+T71A8 000:266.816 JLINK_GetCompileDateTime()
+T71A8 000:266.820 - 0.006ms
+T71A8 000:266.826 JLINK_GetFirmwareString(...)
+T71A8 000:266.831 - 0.006ms
+T71A8 000:266.836 JLINK_GetHardwareVersion()
+T71A8 000:266.840 - 0.006ms returns 94000
+T71A8 000:266.846 JLINK_GetSN()
+T71A8 000:266.851 - 0.007ms returns 69409808
+T71A8 000:266.857 JLINK_GetOEMString(...)
+T71A8 000:266.864 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
+T71A8 000:267.894 - 1.043ms returns 0x00
+T71A8 000:267.914 JLINK_HasError()
+T71A8 000:267.949 JLINK_SetSpeed(5000)
+T71A8 000:268.077 - 0.130ms
+T71A8 000:268.538 JLINK_HasError()
+T71A8 000:268.551 JLINK_SetResetType(JLINKARM_RESET_TYPE_NORMAL)
+T71A8 000:268.556 - 0.008ms returns JLINKARM_RESET_TYPE_NORMAL
+T71A8 000:268.576 JLINK_Reset()
+T71A8 000:268.838   InitTarget() start
+T71A8 000:268.854    J-Link Script File: Executing InitTarget()
+T71A8 000:269.112   JTAG selected. Identifying JTAG Chain...
+T71A8 000:270.227   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:270.526   Error: Scanning JTAG chain failed.
+T71A8 000:270.539   Can not attach to CPU. Trying connect under reset.
+T71A8 000:321.115   JTAG selected. Identifying JTAG Chain...
+T71A8 000:322.253   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:322.598   Error: Scanning JTAG chain failed.
+T71A8 000:322.605   Connecting to CPU via connect under reset failed.
+T71A8 000:373.616   InitTarget() end - Took 104ms
+T71A8 000:373.767   Connect failed. Resetting via Reset pin and trying again.
+T71A8 000:436.749   InitTarget() start
+T71A8 000:436.784    J-Link Script File: Executing InitTarget()
+T71A8 000:437.295   JTAG selected. Identifying JTAG Chain...
+T71A8 000:438.778   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:439.309   Error: Scanning JTAG chain failed.
+T71A8 000:439.351   Can not attach to CPU. Trying connect under reset.
+T71A8 000:490.276   JTAG selected. Identifying JTAG Chain...
+T71A8 000:491.727   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:492.188   Error: Scanning JTAG chain failed.
+T71A8 000:492.228   Connecting to CPU via connect under reset failed.
+T71A8 000:543.670   InitTarget() end - Took 107ms
+T71A8 000:543.716 - 275.145ms
+T71A8 000:543.786 JLINK_GetIdData(pIdData)
+T71A8 000:544.063   InitTarget() start
+T71A8 000:544.100    J-Link Script File: Executing InitTarget()
+T71A8 000:544.637   JTAG selected. Identifying JTAG Chain...
+T71A8 000:545.923   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:546.364   Error: Scanning JTAG chain failed.
+T71A8 000:546.397   Can not attach to CPU. Trying connect under reset.
+T71A8 000:597.931   JTAG selected. Identifying JTAG Chain...
+T71A8 000:599.916   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:600.698   Error: Scanning JTAG chain failed.
+T71A8 000:600.751   Connecting to CPU via connect under reset failed.
+T71A8 000:652.691   InitTarget() end - Took 108ms
+T71A8 000:652.740   Connect failed. Resetting via Reset pin and trying again.
+T71A8 000:715.019   InitTarget() start
+T71A8 000:715.096    J-Link Script File: Executing InitTarget()
+T71A8 000:716.168   JTAG selected. Identifying JTAG Chain...
+T71A8 000:718.093   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:718.813   Error: Scanning JTAG chain failed.
+T71A8 000:718.881   Can not attach to CPU. Trying connect under reset.
+T71A8 000:770.070   JTAG selected. Identifying JTAG Chain...
+T71A8 000:771.524   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:771.859   Error: Scanning JTAG chain failed.
+T71A8 000:771.888   Connecting to CPU via connect under reset failed.
+T71A8 000:822.990   InitTarget() end - Took 107ms
+T71A8 000:823.039 - 279.260ms
+T71A8 000:823.074 JLINK_GetIdData(pIdData)
+T71A8 000:823.441   InitTarget() start
+T71A8 000:823.483    J-Link Script File: Executing InitTarget()
+T71A8 000:824.133   JTAG selected. Identifying JTAG Chain...
+T71A8 000:825.466   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:825.886   Error: Scanning JTAG chain failed.
+T71A8 000:825.939   Can not attach to CPU. Trying connect under reset.
+T71A8 000:876.715   JTAG selected. Identifying JTAG Chain...
+T71A8 000:878.187   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:878.731   Error: Scanning JTAG chain failed.
+T71A8 000:878.762   Connecting to CPU via connect under reset failed.
+T71A8 000:929.465   InitTarget() end - Took 106ms
+T71A8 000:929.491   Connect failed. Resetting via Reset pin and trying again.
+T71A8 000:990.503   InitTarget() start
+T71A8 000:990.534    J-Link Script File: Executing InitTarget()
+T71A8 000:990.815   JTAG selected. Identifying JTAG Chain...
+T71A8 000:991.798   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 000:992.069   Error: Scanning JTAG chain failed.
+T71A8 000:992.077   Can not attach to CPU. Trying connect under reset.
+T71A8 001:042.328   JTAG selected. Identifying JTAG Chain...
+T71A8 001:043.392   TotalIRLen = ?, IRPrint = 0x..000000000000000000000000
+T71A8 001:043.707   Error: Scanning JTAG chain failed.
+T71A8 001:043.716   Connecting to CPU via connect under reset failed.
+T71A8 001:095.905   InitTarget() end - Took 105ms
+T71A8 001:095.966 - 272.894ms
+T71A8 001:103.038 JLINK_GetFirmwareString(...)
+T71A8 001:103.065 - 0.030ms
+T6AB4 006:967.978   
+  ***** Error: Connection to emulator lost!
+T6AB4 013:215.513   
+  ***** Error: Connection to emulator lost!
+T71A8 048:155.840 JLINK_Close()
+T71A8 048:197.114 - 41.296ms
+T71A8 048:197.140   
+T71A8 048:197.144   Closed

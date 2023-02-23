@@ -74,3 +74,28 @@ void pid_set_fdb(PID_Typedef *pid_info, float fdb)
 {
     pid_info -> fdb = fdb;
 }
+
+/**
+ * @brief PID Calculation
+ * 
+ * @param pid_info 
+ */
+float err,derr;
+void pid_calc(PID_Typedef *pid_info)
+{
+	err = pid_info->ref - pid_info->fdb;
+	pid_info->sum += err;
+	pid_info->err_last = pid_info->err;
+	pid_info->err = err;
+	derr = pid_info->err - pid_info->err_last;
+
+    //Limit Sum
+    if(pid_info->sum > pid_info->sum_max) pid_info->sum = pid_info->sum_max;
+    if(pid_info->sum < -pid_info->sum_max) pid_info->sum = -pid_info->sum_max;
+
+	pid_info->output = pid_info->kp * err + pid_info->ki * pid_info->sum + pid_info->kd * derr;            
+
+    //Limit Output
+    if(pid_info->output > pid_info->output_max) pid_info->output = pid_info->output_max;
+    if(pid_info->output < -pid_info->output_max) pid_info->output = -pid_info->output_max;
+}

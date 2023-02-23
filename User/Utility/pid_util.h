@@ -8,6 +8,8 @@
  * @copyright Copyright (c) 2023
  *
  */
+#ifndef _PID_UTIL_H_
+#define _PID_UTIL_H_
 
 /***Typedef***/
 typedef struct
@@ -25,6 +27,8 @@ typedef struct
     float sum;
     float output;
 } PID_Typedef;
+
+#endif // _PID_UTIL_H_
 
 /***Functions***/
 void pid_data_reset(PID_Typedef *pid_info);

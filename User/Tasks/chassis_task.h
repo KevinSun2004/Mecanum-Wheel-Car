@@ -23,3 +23,5 @@ typedef struct
 /***Functions***/
 void chassis_init(void);
 void chassis_tim_callback(void);
+void pid_control(void);
+void chassis_calc(int32_t x, int32_t y, int32_t yaw);

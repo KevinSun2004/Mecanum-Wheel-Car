@@ -42,9 +42,9 @@ void motor_init(void)
  * @return int32_t 
  */
 int32_t encoder_count = 0;
-int32_t get_motor_speed(TIM_HandleTypeDef *htim, float *speed)
+void get_motor_speed(TIM_HandleTypeDef *htim, float *speed)
 {
     encoder_count = (short)(__HAL_TIM_GET_COUNTER(htim));
 	__HAL_TIM_SET_COUNTER(htim,0);
-	return encoder_count / 132;
+    *speed = encoder_count / 132;
 }

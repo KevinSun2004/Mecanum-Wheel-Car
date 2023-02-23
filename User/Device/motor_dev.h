@@ -14,4 +14,4 @@
 
 /***Functions***/
 void motor_init(void);
-int32_t get_motor_speed(TIM_HandleTypeDef *htim, float *speed);
+void get_motor_speed(TIM_HandleTypeDef *htim, float *speed);
