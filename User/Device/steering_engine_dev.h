@@ -9,5 +9,8 @@
  * 
  */
 
+#include "tim.h"
+
 /***Functions***/
 void steering_engine_init(void);
+void set_ccr(TIM_HandleTypeDef htim, uint32_t channel, uint32_t value);

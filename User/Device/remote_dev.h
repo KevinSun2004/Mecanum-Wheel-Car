@@ -9,6 +9,9 @@
  *
  */
 
+#ifndef _REMOTE_TYPEDEF_
+#define _REMOTE_TYPEDEF_
+
 /***Includes***/
 #include "main.h"
 #include "stdbool.h"
@@ -18,6 +21,8 @@
 #define MAX_BUF     20
 
 /***Typedef***/
+
+
 typedef struct
 {
     bool rotate_l;
@@ -28,6 +33,8 @@ typedef struct
     uint8_t count;
     uint8_t rx_buff[MAX_BUF];
 }Remote_Typedef;
+
+#endif 
 
 void remote_init(void);
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);

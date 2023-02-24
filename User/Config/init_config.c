@@ -12,8 +12,8 @@
 /***Includes***/
 #include "init_config.h"
 #include "remote_dev.h"
-#include "motor_dev.h"
-#include "steering_engine_dev.h"
+#include "arm_task.h"
+#include "chassis_task.h"
 
 /***Functions***/
 
@@ -25,5 +25,5 @@ void frame_init(void)
 {
     remote_init();
     chassis_init();
-    steering_engine_init();
+    arm_init();
 }
