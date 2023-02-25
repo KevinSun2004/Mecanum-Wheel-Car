@@ -13,6 +13,12 @@
 #include "chassis_task.h"
 
 /***Functions***/
+
+/**
+ * @brief Timer Callback
+ * 
+ * @param htim 
+ */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim == &Program_TIM)
