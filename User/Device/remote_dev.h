@@ -37,5 +37,5 @@ typedef struct
 #endif 
 
 void remote_init(void);
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);
+void remote_uart_callback();
 void rc_handler(uint8_t data[]);

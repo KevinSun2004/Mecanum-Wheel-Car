@@ -8,7 +8,11 @@
  * @copyright Copyright (c) 2023
  * 
  */
+
+/***Includes***/
 #include "tim.h"
+#include "usart.h"
 
 /***Functions***/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);

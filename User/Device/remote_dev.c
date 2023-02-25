@@ -43,7 +43,7 @@ void remote_init(void)
  * @param huart
  * @param Size
  */
-void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+void remote_uart_callback()
 {
     if (remote_info.rx_buff[0] == 0xA5 && remote_info.rx_buff[data_length - 1] == 0x5A) {
         rc_handler(remote_info.rx_buff);

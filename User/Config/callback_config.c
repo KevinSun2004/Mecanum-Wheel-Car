@@ -8,9 +8,12 @@
  * @copyright Copyright (c) 2023
  *
  */
+
+/***Includes***/
 #include "callback_config.h"
 #include "init_config.h"
 #include "chassis_task.h"
+#include "remote_dev.h"
 
 /***Functions***/
 
@@ -24,5 +27,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     if(htim == &Program_TIM)
     {
         chassis_tim_callback();
+    }
+}
+
+/**
+ * @brief Uart Callback
+ * 
+ * @param huart 
+ * @param Size 
+ */
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+    if(huart == &Bluetooth_UART)
+    {
+        remote_uart_callback();
     }
 }
