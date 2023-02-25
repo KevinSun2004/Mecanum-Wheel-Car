@@ -36,6 +36,7 @@ typedef struct
 
 #endif 
 
+/***Functions***/
 void remote_init(void);
 void remote_uart_callback();
 void rc_handler(uint8_t data[]);

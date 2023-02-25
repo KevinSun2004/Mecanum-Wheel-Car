@@ -16,8 +16,7 @@
 #include "main.h"
 #include "remote_dev.h"
 
-
-//PI
+/***Define***/
 #define PI 3.1415926
 
 //arm length
