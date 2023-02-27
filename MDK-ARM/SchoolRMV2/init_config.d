@@ -30,5 +30,10 @@ schoolrmv2\init_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.
 schoolrmv2\init_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 schoolrmv2\init_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 schoolrmv2\init_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+schoolrmv2\init_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+schoolrmv2\init_config.o: ..\User\Tasks\arm_task.h
+schoolrmv2\init_config.o: ../User/Device/remote_dev.h
+schoolrmv2\init_config.o: ..\User\Tasks\chassis_task.h
+schoolrmv2\init_config.o: ../User/Utility/pid_util.h
 schoolrmv2\init_config.o: ../User/Device/motor_dev.h
-schoolrmv2\init_config.o: ../User/Device/steering_engine_dev.h
+schoolrmv2\init_config.o: ../Core/Inc/tim.h

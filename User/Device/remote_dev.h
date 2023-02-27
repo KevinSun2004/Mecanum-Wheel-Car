@@ -38,5 +38,5 @@ typedef struct
 
 /***Functions***/
 void remote_init(void);
-void remote_uart_callback();
+void remote_uart_callback(void);
 void rc_handler(uint8_t data[]);

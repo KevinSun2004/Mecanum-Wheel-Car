@@ -25,6 +25,15 @@
  */
 void motor_init(void)
 {
+		HAL_TIM_Encoder_Start(&Motor1_Encoder, TIM_CHANNEL_ALL);
+		__HAL_TIM_ENABLE_IT(&Motor1_Encoder, TIM_IT_UPDATE);
+		HAL_TIM_Encoder_Start(&Motor2_Encoder, TIM_CHANNEL_ALL);
+		__HAL_TIM_ENABLE_IT(&Motor1_Encoder, TIM_IT_UPDATE);
+		HAL_TIM_Encoder_Start(&Motor3_Encoder, TIM_CHANNEL_ALL);
+		__HAL_TIM_ENABLE_IT(&Motor1_Encoder, TIM_IT_UPDATE);
+		HAL_TIM_Encoder_Start(&Motor4_Encoder, TIM_CHANNEL_ALL);
+		__HAL_TIM_ENABLE_IT(&Motor1_Encoder, TIM_IT_UPDATE);
+	
     //Start PWM Output
     HAL_TIM_PWM_Start(&Motor1_PWM_TIM, Motor1_PWM_CH);
     HAL_TIM_PWM_Start(&Motor2_PWM_TIM, Motor2_PWM_CH);
@@ -47,7 +56,7 @@ void get_motor_speed(TIM_HandleTypeDef *htim, float *speed)
 {
     encoder_count = (short)(__HAL_TIM_GET_COUNTER(htim));
 	__HAL_TIM_SET_COUNTER(htim,0);
-    *speed = encoder_count / 132;
+    *speed = encoder_count / 13.2f;
 }
 
 /**

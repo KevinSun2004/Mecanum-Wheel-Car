@@ -23,10 +23,13 @@
 "schoolrmv2\stm32f1xx_hal_uart.o"
 "schoolrmv2\system_stm32f1xx.o"
 "schoolrmv2\init_config.o"
-"schoolrmv2\motor_dev.o"
-"schoolrmv2\remote_dev.o"
-"schoolrmv2\steering_engine_dev.o"
-"schoolrmv2\can_util.o"
+"schoolrmv2\callback_config.o"
+"schoolrmv2\motor_dev_1.o"
+"schoolrmv2\remote_dev_1.o"
+"schoolrmv2\steering_engine_dev_1.o"
+"schoolrmv2\pid_util.o"
+"schoolrmv2\arm_task.o"
+"schoolrmv2\chassis_task.o"
 --strict --scatter "SchoolRMV2\SchoolRMV2.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

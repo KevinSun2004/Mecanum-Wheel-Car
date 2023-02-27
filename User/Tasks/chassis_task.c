@@ -85,10 +85,10 @@ void pid_control()
  */
 void chassis_calc(int32_t x, int32_t y, int32_t yaw)
 {
-    pid_set_ref(&chassis_info.pid_info[0], +x + y + yaw);
-    pid_set_ref(&chassis_info.pid_info[1], -x + y + yaw);
-    pid_set_ref(&chassis_info.pid_info[2], -x - y + yaw);
-    pid_set_ref(&chassis_info.pid_info[3], +x - y + yaw);
+    pid_set_ref(&chassis_info.pid_info[0], 0.5f*(+x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[1], 0.5f*(-x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[2], 0.5f*(-x - y + yaw));
+    pid_set_ref(&chassis_info.pid_info[3], 0.5f*(+x - y + yaw));
 }
 
 /**
