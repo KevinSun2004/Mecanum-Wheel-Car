@@ -32,8 +32,10 @@ schoolrmv2\callback_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_
 schoolrmv2\callback_config.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 schoolrmv2\callback_config.o: ../Core/Inc/usart.h
 schoolrmv2\callback_config.o: ..\User\Config\init_config.h
-schoolrmv2\callback_config.o: ..\User\Tasks\chassis_task.h
+schoolrmv2\callback_config.o: ../User/Tasks/chassis_task.h
 schoolrmv2\callback_config.o: ../User/Utility/pid_util.h
 schoolrmv2\callback_config.o: ../User/Device/motor_dev.h
 schoolrmv2\callback_config.o: ../User/Device/remote_dev.h
 schoolrmv2\callback_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+schoolrmv2\callback_config.o: ../User/Device/ps2_dev.h
+schoolrmv2\callback_config.o: ../User/Config/init_config.h

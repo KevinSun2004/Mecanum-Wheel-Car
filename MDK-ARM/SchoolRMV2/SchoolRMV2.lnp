@@ -27,6 +27,7 @@
 "schoolrmv2\motor_dev_1.o"
 "schoolrmv2\remote_dev_1.o"
 "schoolrmv2\steering_engine_dev_1.o"
+"schoolrmv2\ps2_dev.o"
 "schoolrmv2\pid_util.o"
 "schoolrmv2\arm_task.o"
 "schoolrmv2\chassis_task.o"

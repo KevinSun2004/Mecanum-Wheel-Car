@@ -36,3 +36,5 @@ schoolrmv2\chassis_task.o: ../User/Config/init_config.h
 schoolrmv2\chassis_task.o: ../User/Device/remote_dev.h
 schoolrmv2\chassis_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 schoolrmv2\chassis_task.o: ../User/Utility/pid_util.h
+schoolrmv2\chassis_task.o: ../User/Device/ps2_dev.h
+schoolrmv2\chassis_task.o: ../User/Config/init_config.h

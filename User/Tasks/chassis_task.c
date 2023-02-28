@@ -14,10 +14,12 @@
 #include "init_config.h"
 #include "remote_dev.h"
 #include "pid_util.h"
+#include "ps2_dev.h"
 
 /***Variables***/
 Chassis_Typedef chassis_info;
 extern Remote_Typedef remote_info;
+extern PS2_TypeDef PS2_Data;
 
 /***Functions***/
 
@@ -60,7 +62,7 @@ void update_speed()
  */
 void pid_control()
 {
-    chassis_calc(remote_info.control_x, remote_info.control_y, 50*(remote_info.rotate_l - remote_info.rotate_r));
+    chassis_calc(PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX);
 
     pid_set_fdb(&chassis_info.pid_info[0], chassis_info.speed[0]);
     pid_set_fdb(&chassis_info.pid_info[1], chassis_info.speed[1]);
@@ -85,10 +87,10 @@ void pid_control()
  */
 void chassis_calc(int32_t x, int32_t y, int32_t yaw)
 {
-    pid_set_ref(&chassis_info.pid_info[0], 0.5f*(+x + y + yaw));
-    pid_set_ref(&chassis_info.pid_info[1], 0.5f*(-x + y + yaw));
-    pid_set_ref(&chassis_info.pid_info[2], 0.5f*(-x - y + yaw));
-    pid_set_ref(&chassis_info.pid_info[3], 0.5f*(+x - y + yaw));
+    pid_set_ref(&chassis_info.pid_info[0], 0.25f*(+x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[1], 0.25f*(-x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[2], 0.25f*(-x - y + yaw));
+    pid_set_ref(&chassis_info.pid_info[3], 0.25f*(+x - y + yaw));
 }
 
 /**
@@ -99,5 +101,4 @@ void chassis_tim_callback()
 {
     update_speed();
     pid_control();
-    //motor_ctrl(50, 50, 50, 50);
 }

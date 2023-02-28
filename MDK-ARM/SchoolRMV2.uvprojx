@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User/Config;../User/Device;../User/Utility;..\User\Tasks</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User/Config;../User/Device;../User/Utility;../User/Tasks</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -752,6 +752,11 @@
               <FileName>steering_engine_dev.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Device\steering_engine_dev.c</FilePath>
+            </File>
+            <File>
+              <FileName>ps2_dev.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Device\ps2_dev.c</FilePath>
             </File>
           </Files>
         </Group>

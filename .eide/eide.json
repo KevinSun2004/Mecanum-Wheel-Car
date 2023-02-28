@@ -81,6 +81,9 @@
             "path": "User/Device/motor_dev.c"
           },
           {
+            "path": "User/Device/ps2_dev.c"
+          },
+          {
             "path": "User/Device/remote_dev.c"
           },
           {

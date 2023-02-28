@@ -14,6 +14,7 @@
 #include "init_config.h"
 #include "chassis_task.h"
 #include "remote_dev.h"
+#include "ps2_dev.h"
 
 /***Functions***/
 
@@ -26,6 +27,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if(htim == &Program_TIM)
     {
+        PS2_Read_Data();
         chassis_tim_callback();
     }
 }
@@ -38,8 +40,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    if(huart == &Bluetooth_UART)
-    {
-        remote_uart_callback();
-    }
+    //if(huart == &Bluetooth_UART)
+    //{
+    //    remote_uart_callback();
+    //}
 }

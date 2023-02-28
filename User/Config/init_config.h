@@ -97,5 +97,21 @@
 
 #define Bluetooth_UART    huart1
 
+/**
+ * @brief Define PS2 Ports
+ * 
+ */
+#define CLK_Port GPIOD
+#define CLK_Pin GPIO_PIN_0
+
+#define CMD_Port GPIOD
+#define CMD_Pin GPIO_PIN_1
+
+#define ATT_Port GPIOD
+#define ATT_Pin GPIO_PIN_2
+
+#define DAT_Port GPIOD
+#define DAT_Pin GPIO_PIN_3 
+
 /***Functions***/
 void frame_init(void);
