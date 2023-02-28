@@ -16891,3 +16891,26 @@ T4778 095:775.630 JLINK_ReadMemEx(0x0000000A, 0x1 Bytes, Flags = 0x02000000)
 T4778 095:775.668   CPU_ReadMem(1 bytes @ 0x0800000A)
 T4778 095:781.424   failed
 T4778 095:781.518 - 5.898ms returns -1 (0xFFFFFFFF)
+T4778 2845:762.128 JLINK_HasError()
+T4778 2845:773.916 JLINK_Close()
+T4778 2845:774.350   CPU is running
+T4778 2845:774.374   CPU_WriteMem(4 bytes @ 0xE0002008)
+T4778 2845:779.736   CPU is running
+T4778 2845:779.754   CPU_WriteMem(4 bytes @ 0xE000200C)
+T4778 2845:785.023   CPU is running
+T4778 2845:785.040   CPU_WriteMem(4 bytes @ 0xE0002010)
+T4778 2845:790.194   CPU is running
+T4778 2845:790.212   CPU_WriteMem(4 bytes @ 0xE0002014)
+T4778 2845:795.367   CPU is running
+T4778 2845:795.381   CPU_WriteMem(4 bytes @ 0xE0002018)
+T4778 2845:800.642   CPU is running
+T4778 2845:800.656   CPU_WriteMem(4 bytes @ 0xE000201C)
+T4778 2845:814.544   CPU could not be halted
+T4778 2845:814.590   OnDisconnectTarget() start
+T4778 2845:814.606    J-Link Script File: Executing OnDisconnectTarget()
+T4778 2845:814.633   CPU is running
+T4778 2845:814.650   CPU_WriteMem(4 bytes @ 0xE0042004)
+T4778 2845:819.995   OnDisconnectTarget() end - Took 6ms
+T4778 2845:845.699 - 71.802ms
+T4778 2845:845.721   
+T4778 2845:845.726   Closed
