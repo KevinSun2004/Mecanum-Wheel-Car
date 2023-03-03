@@ -15,6 +15,10 @@
 
 #include "main.h"
 #include "remote_dev.h"
+#include "tim.h"
+#include "stdbool.h"
+#include "steering_engine_dev.h"
+#include "init_config.h"
 
 /***Define***/
 #define PI 3.1415926

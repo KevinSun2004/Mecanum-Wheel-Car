@@ -9,7 +9,13 @@
  *
  */
 
+#ifndef _INIT_CONFIG_H_
+#define _INIT_CONFIG_H_
+
 /***Includes***/
+#include "remote_dev.h"
+#include "arm_task.h"
+#include "chassis_task.h"
 
 /**
  * @brief Define Motor Port && Pin && CLK
@@ -113,5 +119,6 @@
 #define DAT_Port GPIOD
 #define DAT_Pin GPIO_PIN_3 
 
+#endif
 /***Functions***/
 void frame_init(void);

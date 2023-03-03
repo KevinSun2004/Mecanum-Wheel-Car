@@ -9,9 +9,16 @@
  * 
  */
 
+#ifndef _MOTOR_DEV_H_
+#define _MOTOR_DEV_H_
+
 /***Includes***/
 #include "tim.h"
+#include "init_config.h"
+#include "tim.h"
+#include "math.h"
 
+#endif
 /***Functions***/
 void motor_init(void);
 void get_motor_speed(TIM_HandleTypeDef *htim, float *speed);

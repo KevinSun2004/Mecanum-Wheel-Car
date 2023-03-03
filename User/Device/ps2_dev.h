@@ -9,9 +9,13 @@
  *
  */
 
+#ifndef _PS2_DEV_H_
+#define _PS2_DEV_H_
+
 /***Includes***/
-#include "main.h"
 #include "init_config.h"
+#include "math.h"
+#include "stdlib.h"
 
 /***Typedef***/
 typedef struct
@@ -28,6 +32,7 @@ typedef struct
 
 } PS2_TypeDef;
 
+#endif
 /***Funtions***/
 void PS2_Delay(void);
 uint8_t PS2_Rx_and_Tx(uint8_t TxData);

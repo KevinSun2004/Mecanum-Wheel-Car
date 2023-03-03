@@ -15,6 +15,9 @@
 /***Includes***/
 #include "main.h"
 #include "stdbool.h"
+#include "init_config.h"
+#include "usart.h"
+#include "dma.h"
 
 /***Define***/
 #define data_length 8

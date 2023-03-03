@@ -9,9 +9,15 @@
  * 
  */
 
+#ifndef _CHASSIS_TASK_H_
+#define _CHASSIS_TASK_H_
+
 /***Includes***/
 #include "pid_util.h"
 #include "motor_dev.h"
+#include "init_config.h"
+#include "remote_dev.h"
+#include "ps2_dev.h"
 
 /***Typedef***/
 typedef struct
@@ -20,6 +26,7 @@ typedef struct
     float speed[4];
 }Chassis_Typedef;
 
+#endif
 /***Functions***/
 void chassis_init(void);
 void chassis_tim_callback(void);

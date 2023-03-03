@@ -11,9 +11,6 @@
 
 /***Includes***/
 #include "motor_dev.h"
-#include "init_config.h"
-#include "tim.h"
-#include "math.h"
 
 /***Variables***/
 
