@@ -22,3 +22,12 @@
 - [x] 电机编码器读取
 - [x] 电机PID控制
 - [ ] 机械臂控制
+
+## Contribution to this contest
+- Zhongtian Sun: 电控&视觉代码
+- Junxi Li     : 机械结构设计
+- Zirui Dai    : DC-DC降压模块制作
+- Lujundong Li : 视觉代码
+
+## Copyright
+**Copyright (c) 2023 DrinkCat**
