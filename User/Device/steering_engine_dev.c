@@ -11,7 +11,6 @@
 
 /***Includes***/
 #include "steering_engine_dev.h"
-#include "init_config.h"
 
 /***Functions***/
 

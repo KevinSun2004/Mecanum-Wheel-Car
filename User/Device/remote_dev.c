@@ -11,9 +11,6 @@
 
 /***Includes***/
 #include "remote_dev.h"
-#include "init_config.h"
-#include "usart.h"
-#include "dma.h"
 
 /***Variables***/
 Remote_Typedef remote_info;

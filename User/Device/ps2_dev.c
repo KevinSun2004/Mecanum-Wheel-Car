@@ -11,8 +11,6 @@
 
 /***Includes***/
 #include "ps2_dev.h"
-#include "math.h"
-#include "stdlib.h"
 
 /***Variables***/
 PS2_TypeDef PS2_Data   = {0};

@@ -11,9 +11,6 @@
 
 /***Includes***/
 #include "init_config.h"
-#include "remote_dev.h"
-#include "arm_task.h"
-#include "chassis_task.h"
 
 /***Functions***/
 

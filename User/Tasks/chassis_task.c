@@ -11,10 +11,6 @@
 
 /***Includes***/
 #include "chassis_task.h"
-#include "init_config.h"
-#include "remote_dev.h"
-#include "pid_util.h"
-#include "ps2_dev.h"
 
 /***Variables***/
 Chassis_Typedef chassis_info;
