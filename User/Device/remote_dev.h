@@ -37,6 +37,9 @@ typedef struct
     uint8_t rx_buff[MAX_BUF];
 }Remote_Typedef;
 
+/***Variables***/
+extern Remote_Typedef remote_info;
+
 #endif 
 
 /***Functions***/

@@ -18,6 +18,7 @@
 #include "init_config.h"
 #include "chassis_task.h"
 #include "remote_dev.h"
+#include "arm_task.h"
 #include "ps2_dev.h"
 
 #endif

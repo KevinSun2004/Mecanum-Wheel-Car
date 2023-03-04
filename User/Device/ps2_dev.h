@@ -32,6 +32,9 @@ typedef struct
 
 } PS2_TypeDef;
 
+/***Variables***/
+extern PS2_TypeDef PS2_Data;
+
 #endif
 /***Funtions***/
 void PS2_Delay(void);

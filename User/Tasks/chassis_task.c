@@ -14,8 +14,6 @@
 
 /***Variables***/
 Chassis_Typedef chassis_info;
-extern Remote_Typedef remote_info;
-extern PS2_TypeDef PS2_Data;
 
 /***Functions***/
 

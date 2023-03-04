@@ -64,9 +64,9 @@ void move_arm(double x, double y, double degree) // degree: degree between horiz
  *
  * @param arm_position
  */
-void arm_control(uint8_t arm_position)
+void arm_control()
 {
-    if (arm_position != 0x00) {
+    /*if (arm_position != 0x00) {
         switch (arm_position) {
             case 0xFF: // up
                 move_arm(current_x, current_y + arm_speed, current_degree);
@@ -95,7 +95,7 @@ void arm_control(uint8_t arm_position)
             default:
                 break;
         }
-    }
+    }*/
 }
 
 /**
@@ -113,4 +113,13 @@ int degree2ccr(int degree)
 double degree2radian(double degree)
 {
     return degree * PI / 180;
+}
+
+/**
+ * @brief Arm Timer Callback
+ * 
+ */
+void arm_tim_callback()
+{
+    arm_control();
 }

@@ -25,6 +25,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
         PS2_Read_Data();
         chassis_tim_callback();
+        arm_tim_callback();
     }
 }
 

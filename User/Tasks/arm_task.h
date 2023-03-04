@@ -49,7 +49,8 @@
 /***Functions***/
 void arm_init(void);
 void move_arm(double x, double y, double degree);
-void arm_control(uint8_t arm_position);
+void arm_control(void);
+void arm_tim_callback(void);
 
 int degree2ccr(int degree);
 int radian2ccr(double radian);
