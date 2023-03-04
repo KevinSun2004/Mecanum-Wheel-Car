@@ -14,7 +14,7 @@
 
 /***Includes***/
 #include "tim.h"
-#include "init_config.h"
+#include "connect_config.h"
 #include "tim.h"
 #include "math.h"
 

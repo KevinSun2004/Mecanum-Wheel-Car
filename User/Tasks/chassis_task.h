@@ -15,7 +15,7 @@
 /***Includes***/
 #include "pid_util.h"
 #include "motor_dev.h"
-#include "init_config.h"
+#include "connect_config.h"
 #include "remote_dev.h"
 #include "ps2_dev.h"
 

@@ -15,7 +15,7 @@
 /***Includes***/
 #include "main.h"
 #include "stdbool.h"
-#include "init_config.h"
+#include "connect_config.h"
 #include "usart.h"
 #include "dma.h"
 

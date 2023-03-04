@@ -16,6 +16,10 @@
 double current_x      = 0;
 double current_y      = 0;
 double current_degree = 0;
+double current_hand   = 0;
+double current_alpha  = 0;
+double current_beta   = 0;
+double current_gamma  = 0;
 
 /***Funtions***/
 
@@ -25,8 +29,65 @@ double current_degree = 0;
  */
 void arm_init(void)
 {
-    move_arm(init_x, init_y, init_ver);
-    steering_engine_init();
+    move_arm(init_x, init_y, init_degree, init_hand);
+    steering_engine_init(SteeringEngine1_TIM, SteeringEngine1_CH);
+    steering_engine_init(SteeringEngine2_TIM, SteeringEngine2_CH);
+    steering_engine_init(SteeringEngine3_TIM, SteeringEngine3_CH);
+    steering_engine_init(SteeringEngine4_TIM, SteeringEngine4_CH);
+}
+
+/**
+ * @brief Update ccr
+ *
+ * @param alpha
+ * @param beta
+ * @param gamma
+ * @param hand
+ */
+void update_ccr(int alpha, int beta, int gamma, int hand)
+{
+    set_ccr(SteeringEngine1_TIM, SteeringEngine1_CH, alpha);
+    set_ccr(SteeringEngine2_TIM, SteeringEngine2_CH, beta);
+    set_ccr(SteeringEngine3_TIM, SteeringEngine3_CH, gamma);
+    set_ccr(SteeringEngine4_TIM, SteeringEngine4_CH, hand);
+}
+
+/**
+ * @brief Update Current Value
+ *
+ * @param alpha
+ * @param beta
+ * @param gamma
+ * @param hand
+ */
+void update_current_value(int x, int y, int degree, int hand, double alpha, double beta, double gamma)
+{
+    current_x      = x;
+    current_y      = y;
+    current_degree = degree;
+    current_hand   = hand;
+    current_alpha  = alpha;
+    current_beta   = beta;
+    current_gamma  = gamma;
+}
+
+/**
+ * @brief Test If Data is Within Limit
+ *
+ * @param alpha
+ * @param beta
+ * @param gamma
+ * @param hand
+ * @return true: Within Limit
+ * @return false: Without Limit
+ */
+bool arm_limit(double alpha, double beta, double gamma, double hand)
+{
+    if (alpha < alpha_low || alpha > alpha_high) return false;
+    if (beta < beta_low || beta > beta_high) return false;
+    if (gamma < gamma_low || gamma > gamma_high) return false;
+    if (hand < hand_low || hand > hand_high) return false;
+    return true;
 }
 
 /**
@@ -35,8 +96,9 @@ void arm_init(void)
  * @param x Target x
  * @param y Target y
  * @param degree Target degree
+ * @param hand Hand
  */
-void move_arm(double x, double y, double degree) // degree: degree between horizon and clip
+void move_arm(double x, double y, double degree, double hand) // degree: degree between horizon and clip
 {
     // cal_radian
     double alpha, beta, gamma;
@@ -45,57 +107,83 @@ void move_arm(double x, double y, double degree) // degree: degree between horiz
     gamma = alpha + beta - PI + degree2radian(degree);
 
     // limit
-    if (alpha < alpha_low || alpha > alpha_high) return;
-    if (beta < beta_low || beta > beta_high) return;
-    if (gamma < gamma_low || gamma > gamma_high) return;
+    if (!arm_limit(alpha, beta, gamma, hand)) return;
 
     // within limit -> refresh variables
-    current_x      = x;
-    current_y      = y;
-    current_degree = degree;
-
-    set_ccr(SteeringEngine1_TIM, SteeringEngine1_CH, radian2ccr(alpha));
-    set_ccr(SteeringEngine2_TIM, SteeringEngine2_CH, radian2ccr(beta));
-    set_ccr(SteeringEngine3_TIM, SteeringEngine3_CH, radian2ccr(gamma));
+    update_current_value(x, y, degree, hand, alpha, beta, gamma);
 }
 
 /**
- * @brief Calc Arm Movement
+ * @brief Arm Control
  *
  * @param arm_position
  */
 void arm_control()
 {
-    /*if (arm_position != 0x00) {
-        switch (arm_position) {
-            case 0xFF: // up
-                move_arm(current_x, current_y + arm_speed, current_degree);
-                break;
+    /**
+     * 遥控器控制方式
+     * 左侧四个方向 & 两个独立按键控制固定位置
+     * 右侧四个按键控制机械臂位姿
+     * 四个扳机分别控制夹爪收夹、俯仰角度
+     *
+     * 需要的高度：
+     *
+     * 0mm (1)
+     * 150mm (2)
+     * 200mm
+     * 225mm (3)
+     * 250mm
+     * 300mm (4)
+     * 400mm (5)
+     * 放置到储存盘 (6)
+     *
+     */
 
-            case 0xFE: // down
-                move_arm(current_x, current_y - arm_speed, current_degree);
-                break;
+    // 位置1
+    if (PS2_Data.Key_L_Up == 1)
+        move_arm(100, 0 - H, 90, current_hand);
+    // 位置2
+    if (PS2_Data.Key_L_Down == 1)
+        move_arm(100, 150 - H, 90, current_hand);
+    // 位置3
+    if (PS2_Data.Key_L_Right == 1)
+        move_arm(100, 225 - H, 90, current_hand);
+    // 位置4
+    if (PS2_Data.Key_L_Left == 1)
+        move_arm(100, 300 - H, 90, current_hand);
+    // 位置5
+    if (PS2_Data.Key_Select == 1)
+        move_arm(100, 400 - H, 90, current_hand);
+    // 位置6
+    if (PS2_Data.Key_Start == 1)
+        move_arm(100, 0 - H, 90, current_hand);
+    // 上移
+    if (PS2_Data.Key_R_Up == 1)
+        move_arm(current_x, current_y + arm_speed, current_degree, current_hand);
+    // 下移
+    if (PS2_Data.Key_R_Down == 1)
+        move_arm(current_x, current_y - arm_speed, current_degree, current_hand);
+    // 前移
+    if (PS2_Data.Key_R_Right == 1)
+        move_arm(current_x + arm_speed, current_y, current_degree, current_hand);
+    // 后移
+    if (PS2_Data.Key_R_Left == 1)
+        move_arm(current_x - arm_speed, current_y, current_degree, current_hand);
+    // 下旋
+    if (PS2_Data.Key_L1 == 1)
+        move_arm(current_x, current_y, current_degree + arm_speed, current_hand);
+    // 上旋
+    if (PS2_Data.Key_R1 == 1)
+        move_arm(current_x, current_y, current_degree - arm_speed, current_hand);
+    // 夹爪张开
+    if (PS2_Data.Key_R2 == 1)
+        move_arm(current_x, current_y, current_degree, current_hand + arm_speed);
+    // 夹爪收起
+    if (PS2_Data.Key_R2 == 1)
+        move_arm(current_x, current_y, current_degree, current_hand - arm_speed);
 
-            case 0xFD: // forward
-                move_arm(current_x + arm_speed, current_y, current_degree);
-                break;
-
-            case 0xFC: // backward
-                move_arm(current_x - arm_speed, current_y, current_degree);
-                break;
-
-            case 0x01: // p1
-                move_arm(10, 0, 90);
-                break;
-
-            case 0x02: // p2
-                move_arm(14, 0, 90);
-                break;
-
-            default:
-                break;
-        }
-    }*/
+    // Update Output
+    update_ccr(radian2ccr(current_alpha), radian2ccr(current_beta), radian2ccr(current_gamma), radian2ccr(current_hand));
 }
 
 /**
@@ -117,7 +205,7 @@ double degree2radian(double degree)
 
 /**
  * @brief Arm Timer Callback
- * 
+ *
  */
 void arm_tim_callback()
 {

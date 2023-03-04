@@ -13,7 +13,7 @@
 #define _PS2_DEV_H_
 
 /***Includes***/
-#include "init_config.h"
+#include "connect_config.h"
 #include "math.h"
 #include "stdlib.h"
 

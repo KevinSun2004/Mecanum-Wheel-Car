@@ -15,7 +15,7 @@
 /***Includes***/
 #include "tim.h"
 #include "usart.h"
-#include "init_config.h"
+#include "connect_config.h"
 #include "chassis_task.h"
 #include "remote_dev.h"
 #include "arm_task.h"
