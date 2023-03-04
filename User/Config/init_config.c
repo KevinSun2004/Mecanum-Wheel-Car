@@ -1,12 +1,12 @@
 /**
  * @file init_config.c
  * @author drinkcat (szt@drinkcat.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-02-21
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 /***Includes***/
@@ -16,7 +16,7 @@
 
 /**
  * @brief Frame Init
- * 
+ *
  */
 void frame_init(void)
 {

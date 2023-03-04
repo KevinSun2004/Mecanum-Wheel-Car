@@ -52,7 +52,7 @@ void update_speed()
 
 /**
  * @brief PID Calculation
- * 
+ *
  */
 void pid_control()
 {
@@ -74,17 +74,17 @@ void pid_control()
 
 /**
  * @brief Chassis Movement Calculation
- * 
- * @param x 
- * @param y 
- * @param yaw 
+ *
+ * @param x
+ * @param y
+ * @param yaw
  */
 void chassis_calc(int32_t x, int32_t y, int32_t yaw)
 {
-    pid_set_ref(&chassis_info.pid_info[0], 0.25f*(+x + y + yaw));
-    pid_set_ref(&chassis_info.pid_info[1], 0.25f*(-x + y + yaw));
-    pid_set_ref(&chassis_info.pid_info[2], 0.25f*(-x - y + yaw));
-    pid_set_ref(&chassis_info.pid_info[3], 0.25f*(+x - y + yaw));
+    pid_set_ref(&chassis_info.pid_info[0], 0.25f * (+x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[1], 0.25f * (-x + y + yaw));
+    pid_set_ref(&chassis_info.pid_info[2], 0.25f * (-x - y + yaw));
+    pid_set_ref(&chassis_info.pid_info[3], 0.25f * (+x - y + yaw));
 }
 
 /**

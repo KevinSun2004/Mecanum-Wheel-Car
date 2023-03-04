@@ -16,13 +16,12 @@
 
 /**
  * @brief Timer Callback
- * 
- * @param htim 
+ *
+ * @param htim
  */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if(htim == &Program_TIM)
-    {
+    if (htim == &Program_TIM) {
         PS2_Read_Data();
         chassis_tim_callback();
         arm_tim_callback();
@@ -31,14 +30,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 /**
  * @brief Uart Callback
- * 
- * @param huart 
- * @param Size 
+ *
+ * @param huart
+ * @param Size
  */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-    //if(huart == &Bluetooth_UART)
+    // if(huart == &Bluetooth_UART)
     //{
-    //    remote_uart_callback();
-    //}
+    //     remote_uart_callback();
+    // }
 }

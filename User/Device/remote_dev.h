@@ -25,7 +25,6 @@
 
 /***Typedef***/
 
-
 typedef struct
 {
     bool rotate_l;
@@ -35,12 +34,12 @@ typedef struct
     uint8_t arm_position;
     uint8_t count;
     uint8_t rx_buff[MAX_BUF];
-}Remote_Typedef;
+} Remote_Typedef;
 
 /***Variables***/
 extern Remote_Typedef remote_info;
 
-#endif 
+#endif
 
 /***Functions***/
 void remote_init(void);

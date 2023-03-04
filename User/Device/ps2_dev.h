@@ -17,6 +17,9 @@
 #include "math.h"
 #include "stdlib.h"
 
+/***Define***/
+#define ZEROZONE 5
+
 /***Typedef***/
 typedef struct
 {

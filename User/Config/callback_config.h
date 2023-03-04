@@ -1,12 +1,12 @@
 /**
  * @file callback_config.h
  * @author drinkcat (szt@drinkcat.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-02-22
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef _CALLBACK_CONFIG_H_

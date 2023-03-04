@@ -16,7 +16,7 @@
 
 /**
  * @brief Reset PID Data
- * 
+ *
  * @param pid_info Pointer to PID Structure
  */
 void pid_data_reset(PID_Typedef *pid_info)
@@ -36,13 +36,13 @@ void pid_data_reset(PID_Typedef *pid_info)
 
 /**
  * @brief Set PID Value
- * 
+ *
  * @param pid_info Pointer to PID Structure
- * @param kp 
- * @param ki 
- * @param kd 
- * @param output_max 
- * @param sum_max 
+ * @param kp
+ * @param ki
+ * @param kd
+ * @param output_max
+ * @param sum_max
  */
 void pid_set_value(PID_Typedef *pid_info, float kp, float ki, float kd, float output_max, float sum_max)
 {
@@ -55,47 +55,47 @@ void pid_set_value(PID_Typedef *pid_info, float kp, float ki, float kd, float ou
 
 /**
  * @brief Set Reference
- * 
+ *
  * @param pid_info Pointer to PID Structure
- * @param ref 
+ * @param ref
  */
 void pid_set_ref(PID_Typedef *pid_info, float ref)
 {
-    pid_info -> ref = ref;
+    pid_info->ref = ref;
 }
 
 /**
  * @brief Set Feedback
- * 
+ *
  * @param pid_info Pointer to PID Structure
- * @param fdb 
+ * @param fdb
  */
 void pid_set_fdb(PID_Typedef *pid_info, float fdb)
 {
-    pid_info -> fdb = fdb;
+    pid_info->fdb = fdb;
 }
 
 /**
  * @brief PID Calculation
- * 
- * @param pid_info 
+ *
+ * @param pid_info
  */
-float err,derr;
+float err = 0.0f, err2 = 0.0f;
 void pid_calc(PID_Typedef *pid_info)
 {
-	err = pid_info->ref - pid_info->fdb;
-	pid_info->sum += err;
-	pid_info->err_last = pid_info->err;
-	pid_info->err = err;
-	derr = pid_info->err - pid_info->err_last;
+    pid_info->err_last = pid_info->err;
+    err                = pid_info->ref - pid_info->fdb;
+    pid_info->sum      = pid_info->sum + err;
+    pid_info->err      = err;
+    err2               = pid_info->err - pid_info->err_last;
 
-    //Limit Sum
-    if(pid_info->sum > pid_info->sum_max) pid_info->sum = pid_info->sum_max;
-    if(pid_info->sum < -pid_info->sum_max) pid_info->sum = -pid_info->sum_max;
+    // Limit Sum
+    if (pid_info->sum > pid_info->sum_max) pid_info->sum = pid_info->sum_max;
+    if (pid_info->sum < -pid_info->sum_max) pid_info->sum = -pid_info->sum_max;
 
-	pid_info->output = pid_info->kp * err + pid_info->ki * pid_info->sum + pid_info->kd * derr;            
+    pid_info->output = pid_info->kp * err + pid_info->ki * pid_info->sum + pid_info->kd * err2;
 
-    //Limit Output
-    if(pid_info->output > pid_info->output_max) pid_info->output = pid_info->output_max;
-    if(pid_info->output < -pid_info->output_max) pid_info->output = -pid_info->output_max;
+    // Limit Output
+    if (pid_info->output > pid_info->output_max) pid_info->output = pid_info->output_max;
+    if (pid_info->output < -pid_info->output_max) pid_info->output = -pid_info->output_max;
 }

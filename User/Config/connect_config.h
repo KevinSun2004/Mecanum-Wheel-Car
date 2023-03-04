@@ -1,12 +1,12 @@
 /**
  * @file connect_config.h
  * @author drinkcat (szt@drinkcat.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-03-04
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef _CONNECT_CONFIG_H_
@@ -105,18 +105,18 @@
 
 /**
  * @brief Define PS2 Ports
- * 
+ *
  */
 #define CLK_Port GPIOD
-#define CLK_Pin GPIO_PIN_0
+#define CLK_Pin  GPIO_PIN_0
 
 #define CMD_Port GPIOD
-#define CMD_Pin GPIO_PIN_1
+#define CMD_Pin  GPIO_PIN_1
 
 #define ATT_Port GPIOD
-#define ATT_Pin GPIO_PIN_2
+#define ATT_Pin  GPIO_PIN_2
 
 #define DAT_Port GPIOD
-#define DAT_Pin GPIO_PIN_3 
+#define DAT_Pin  GPIO_PIN_3
 
 #endif

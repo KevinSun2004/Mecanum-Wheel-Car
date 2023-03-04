@@ -1,12 +1,12 @@
 /**
  * @file chassis_task.h
  * @author drinkcat (szt@drinkcat.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-02-22
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 
 #ifndef _CHASSIS_TASK_H_
@@ -24,7 +24,7 @@ typedef struct
 {
     PID_Typedef pid_info[4];
     float speed[4];
-}Chassis_Typedef;
+} Chassis_Typedef;
 
 #endif
 /***Functions***/
