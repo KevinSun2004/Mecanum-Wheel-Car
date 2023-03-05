@@ -25,7 +25,7 @@
 #define PI 3.1415926
 
 // arm length (mm)
-#define L1 100 // long arm
+#define L1 200 // long arm
 #define L2 100 // short arm
 #define H  100 // chassis height
 
@@ -43,10 +43,10 @@
 #define gamma_low  0
 #define gamma_high PI
 #define hand_low   0
-#define hand_high  (PI / 2)
+#define hand_high  90
 
 // speed
-#define arm_speed 0.1
+#define arm_speed 10
 
 #endif
 

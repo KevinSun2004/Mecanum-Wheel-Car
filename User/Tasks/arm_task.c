@@ -153,7 +153,7 @@ void arm_control()
         move_arm(100, 300 - H, 90, current_hand);
     // 位置5
     if (PS2_Data.Key_Select == 1)
-        move_arm(100, 400 - H, 90, current_hand);
+        move_arm(100, 0 - H, 90, current_hand);
     // 位置6
     if (PS2_Data.Key_Start == 1)
         move_arm(100, 0 - H, 90, current_hand);
@@ -179,11 +179,11 @@ void arm_control()
     if (PS2_Data.Key_R2 == 1)
         move_arm(current_x, current_y, current_degree, current_hand + arm_speed);
     // 夹爪收起
-    if (PS2_Data.Key_R2 == 1)
+    if (PS2_Data.Key_L2 == 1)
         move_arm(current_x, current_y, current_degree, current_hand - arm_speed);
 
-    // Update Output
-    update_ccr(radian2ccr(current_alpha), radian2ccr(current_beta), radian2ccr(current_gamma), radian2ccr(current_hand));
+    // Update Output 
+    update_ccr(radian2ccr(current_alpha), radian2ccr(current_beta), radian2ccr(current_gamma), degree2ccr(current_hand));
 }
 
 /**

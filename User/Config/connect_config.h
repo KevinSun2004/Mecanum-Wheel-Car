@@ -75,13 +75,13 @@
 #define SteeringEngine2_TIM  htim2
 #define SteeringEngine2_CH   TIM_CHANNEL_2
 
-#define SteeringEngine3_Port GPIOA
-#define SteeringEngine3_Pin  GPIO_PIN_2
+#define SteeringEngine3_Port GPIOB
+#define SteeringEngine3_Pin  GPIO_PIN_10
 #define SteeringEngine3_TIM  htim2
 #define SteeringEngine3_CH   TIM_CHANNEL_3
 
-#define SteeringEngine4_Port GPIOA
-#define SteeringEngine4_Pin  GPIO_PIN_3
+#define SteeringEngine4_Port GPIOB
+#define SteeringEngine4_Pin  GPIO_PIN_11
 #define SteeringEngine4_TIM  htim2
 #define SteeringEngine4_CH   TIM_CHANNEL_4
 
